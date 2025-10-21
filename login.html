@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Saheed Abrar Fahad Hall</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>Welcome to Saheed Abrar Fahad Hall</h2>
+
+      <!-- Dynamic Button -->
+      <button id="auth-btn"></button>
+
+      <!-- Optional: login form -->
+      <form id="login-form">
+        <input type="email" placeholder="Email" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      // Simulate account check (backend logic)
+      const userHasAccount = false; // true = login, false = sign up
+      const authBtn = document.getElementById("auth-btn");
+
+      if (userHasAccount) {
+        authBtn.textContent = "Login";
+        authBtn.onclick = () => {
+          alert("Redirecting to Login process...");
+          // window.location.href = "actual_login_process.html";
+        };
+      } else {
+        authBtn.textContent = "Sign Up";
+        authBtn.onclick = () => {
+          alert("Redirecting to Sign Up page...");
+          // window.location.href = "signup.html";
+        };
+      }
+    </script>
+  </body>
+</html>

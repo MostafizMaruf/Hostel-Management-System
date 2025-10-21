@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FCI Hostel</title>
+    <style>
+      /* ---------- Root Colors & Fonts ---------- */
+      :root {
+        --primary: #00adb5;
+        --secondary: #393e46;
+        --dark: #222831;
+        --light: #eeeeee;
+        --accent: #ffb400;
+        --gradient: linear-gradient(135deg, #00adb5, #393e46);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: var(--dark);
+        color: var(--light);
+        line-height: 1.6;
+      }
+
+      header {
+        background: var(--gradient);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 60px;
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        font-size: 26px;
+        letter-spacing: 2px;
+      }
+
+      nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      .btn {
+        background: var(--accent);
+        color: #000;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.3s, background 0.3s;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        background: #ffd369;
+      }
+
+      /* ---------- Section Global ---------- */
+      section {
+        padding: 80px 10%;
+        margin-bottom: 60px;
+        background-color: #2c2f36;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.5s, background 0.5s;
+      }
+
+      section:hover {
+        transform: scale(1.01);
+        background: #30343b;
+      }
+
+      section h2 {
+        text-align: center;
+        font-size: 32px;
+        color: var(--accent);
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      section h2::after {
+        content: "";
+        width: 100px;
+        height: 3px;
+        background: var(--primary);
+        display: block;
+        margin: 10px auto;
+        border-radius: 2px;
+      }
+
+      /* ---------- Hero Section ---------- */
+      .hero {
+        background: url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1350&q=80")
+          center/cover;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+      }
+
+      .hero h1 {
+        position: relative;
+        font-size: 50px;
+        margin-bottom: 20px;
+        animation: fadeIn 2s ease;
+      }
+
+      .hero .btn {
+        position: relative;
+        animation: fadeInUp 2.5s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ---------- About Section ---------- */
+      .about p {
+        text-align: center;
+        font-size: 18px;
+        max-width: 800px;
+        margin: auto;
+      }
+
+      /* ---------- Hostel Manager ---------- */
+      .manager {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .manager img {
+        width: 250px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(255, 180, 0, 0.5);
+      }
+
+      .manager .text {
+        max-width: 600px;
+      }
+
+      /* ---------- Notice Board ---------- */
+      .notice {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .notice-list {
+        flex: 1;
+      }
+
+      .notice-list li {
+        background: var(--secondary);
+        margin-bottom: 10px;
+        padding: 12px;
+        border-radius: 8px;
+        transition: background 0.3s;
+        cursor: pointer;
+      }
+
+      .notice-list li:hover {
+        background: var(--primary);
+        color: black;
+      }
+
+      .notice-detail {
+        flex: 2;
+        background: #1f2227;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      /* ---------- Club Activity ---------- */
+      .club-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .club-card {
+        background: var(--secondary);
+        border-radius: 15px;
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.4s, background 0.4s;
+      }
+
+      .club-card:hover {
+        transform: translateY(-10px);
+        background: var(--primary);
+      }
+
+      .club-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .club-card h3 {
+        margin: 15px 0;
+        color: var(--accent);
+      }
+
+      /* ---------- Photo Gallery ---------- */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.08);
+      }
+
+      /* ---------- Contact Section ---------- */
+      .contact {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+      }
+
+      footer {
+        background: var(--secondary);
+        text-align: center;
+        padding: 20px;
+        margin-top: 60px;
+        color: var(--light);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Saheed Abrar Fahad Hostel</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#notice">Notice</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="#" class="btn">Login</a>
+    </header>
+
+    <section class="hero">
+      <h1>Welcome to Saheed Abrar Fahad Hostel</h1>
+      <a href="#about" class="btn">Explore More</a>
+    </section>
+
+    <section id="about" class="about">
+      <h2>About Section</h2>
+      <p>
+        FCI Hostel is a modern and comfortable residence designed to provide
+        students with a safe, clean, and peaceful environment. We ensure quality
+        meals, hygienic surroundings, and uninterrupted internet access to make
+        hostel life enjoyable and productive. Our mission is to create a
+        home-like atmosphere where every student can grow academically,
+        socially, and personally. At FCI Hostel, we don’t just offer a place to
+        stay — we build a community of learners and dreamers. 🌟
+      </p>
+    </section>
+
+    <section id="manager">
+      <h2>Hostel Manager Message</h2>
+      <div class="manager">
+        <img src="manager.jpg" alt="Manager" />
+        <div class="text">
+          <p>
+            “Dear Students, Welcome to FCI Hostel — a place not just to stay,
+            but to grow, learn, and belong. Our goal is to provide a safe,
+            clean, and supportive environment where you can focus on your
+            studies and personal development. We believe that every student
+            deserves respect, comfort, and care — and we are here to ensure that
+            every moment you spend here becomes memorable. Together, let’s make
+            saheed Abrar Fahad Hostel not just a residence, but a true family.”
+          </p>
+          <h4>- Rahim Uddin<br />Hostel Manager, Saheed Abrar Fahad Hostel</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="notice">
+      <h2>Notice Board</h2>
+      <div class="notice">
+        <ul class="notice-list">
+          <li>Room Allocation 2025</li>
+          <li>Meal Schedule Update</li>
+          <li>Club Activity Registration</li>
+          <li>Maintenance Notice</li>
+        </ul>
+        <div class="notice-detail">
+          <h3>Details</h3>
+          <p>এখানে নির্বাচিত নোটিশের বিস্তারিত বিবরণ প্রদর্শিত হবে।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="club">
+      <h2>Club Activities</h2>
+      <div class="club-grid">
+        <div class="club-card">
+          <h3>Debating Club</h3>
+          <img src="cultural.jpg" alt="Debating" />
+          <p>ছাত্রদের যুক্তিবোধ ও আত্মবিশ্বাস গড়ে তুলতে সহায়তা করে।</p>
+        </div>
+        <div class="club-card">
+          <h3>Cultural Club</h3>
+          <img src="fci8d.jpg" alt="Cultural" />
+          <p>বিভিন্ন সাংস্কৃতিক অনুষ্ঠানের আয়োজনের মাধ্যমে প্রতিভা প্রকাশ।</p>
+        </div>
+        <div class="club-card">
+          <h3>Skill Club</h3>
+          <img src="fci10.jpg" alt="Skill" />
+          <p>ছাত্রদের প্রযুক্তিগত ও সৃজনশীল দক্ষতা উন্নয়ন।</p>
+        </div>
+        <div class="club-card">
+          <h3>Sports Club</h3>
+          <img src="fci11.jpg" alt="Sports" />
+          <p>শারীরিক সুস্থতা ও টিমওয়ার্ক গড়ে তোলার সুযোগ।</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery">
+        <img src="fci1.jpg" />
+        <img src="fci13.jpg" />
+        <img src="fci3.jpg" />
+        <img src="fci4.jpg" />
+        <img src="fci4.jpg" />
+        <img src="fci5.jpg" />
+        <img src="fci5.jpg" />
+        <img src="fci6.jpg" />
+        <img src="fci7.jpg" />
+        <img src="fci9.jpg" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Complain</h2>
+      <div class="contact">
+        <div class="contact-info">
+          <p>📍 Feni Computer Institute Hostel</p>
+          <p>📞 Hotline: 01234-567890</p>
+          <p>✉️ Email: info@fcihostel.com</p>
+        </div>
+        <div class="contact-form">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea rows="4" placeholder="Your Message"></textarea>
+          <button class="btn">Submit</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2025 SAF Hostel | All Rights Reserved</footer>
+  </body>
+</html>

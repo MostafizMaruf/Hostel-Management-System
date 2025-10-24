@@ -219,6 +219,117 @@
         padding: 20px;
         border-radius: 10px;
       }
+      /* =========================
+   Meal Management Section
+   Premium Dark Edition
+========================= */
+      .meal-section {
+        padding: 70px 10%;
+        background: linear-gradient(145deg, #000000, #0b1e14);
+        text-align: center;
+        color: #f8fafc;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* light effect behind section */
+      .meal-section::before {
+        content: "";
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 250px;
+        height: 250px;
+        background: rgba(11, 107, 58, 0.2);
+        border-radius: 50%;
+        filter: blur(80px);
+      }
+
+      .meal-section h2 {
+        font-size: 34px;
+        color: #00ff88;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        margin-bottom: 14px;
+        text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+      }
+
+      .meal-section .meal-intro {
+        font-size: 17px;
+        color: #cbd5e1;
+        margin-bottom: 40px;
+      }
+
+      /* Meal Table Container */
+      .meal-table-container {
+        overflow-x: auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Meal Table Design */
+      .meal-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(0, 255, 136, 0.2);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      /* Table Headers */
+      .meal-table th {
+        background: linear-gradient(180deg, #0b6b3a, #06442a);
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 16px;
+        border-bottom: 2px solid #00ff88;
+      }
+
+      /* Table Data */
+      .meal-table td {
+        padding: 14px 18px;
+        color: #e2e8f0;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.15);
+        border-right: 1px solid rgba(0, 255, 136, 0.08);
+      }
+
+      /* Rounded corner fix */
+      .meal-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      /* Hover Animation */
+      .meal-table tr:hover {
+        background: rgba(0, 255, 136, 0.08);
+        transition: 0.3s ease;
+        transform: scale(1.01);
+      }
+
+      /* Glow effect on hover */
+      .meal-table td:hover {
+        color: #00ff88;
+        text-shadow: 0 0 5px rgba(0, 255, 136, 0.4);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .meal-section h2 {
+          font-size: 26px;
+        }
+        .meal-table th,
+        .meal-table td {
+          font-size: 13px;
+          padding: 10px;
+        }
+      }
 
       /* ---------- Club Activity ---------- */
       .club-grid {
@@ -270,39 +381,168 @@
         transform: scale(1.08);
       }
 
-      /* ---------- Contact Section ---------- */
-      .contact {
+      /* ======= Footer Section ======= */
+      .footer {
+        background: linear-gradient(160deg, #000000, #111827);
+        color: #e2e8f0;
+        padding: 60px 50px 30px;
+        font-family: "Poppins", sans-serif;
+        border-top: 2px solid rgba(0, 255, 136, 0.2);
+        position: relative;
+      }
+
+      /* Layout */
+      .footer-container {
         display: flex;
-        gap: 40px;
+        justify-content: space-between;
         flex-wrap: wrap;
+        gap: 40px;
+      }
+
+      /* Left Section */
+      .footer-left {
+        flex: 1;
+        min-width: 260px;
+      }
+
+      .footer-left h3 {
+        color: #00ff88;
+        font-weight: 800;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .contact-info p {
+        margin: 8px 0;
+        font-size: 15px;
+        color: #cbd5e1;
+      }
+
+      .contact-info i {
+        color: #00ff88;
+        margin-right: 8px;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        margin-top: 20px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(0, 255, 136, 0.3);
+        transition: all 0.3s ease;
+        overflow: hidden;
       }
 
-      .contact-info {
+      .social-icons a img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.15);
+        box-shadow: 0 0 10px #00ff88;
+        background: rgba(0, 255, 136, 0.2);
+      }
+
+      .social-icons a:hover img {
+        transform: rotate(8deg) scale(1.2);
+      }
+
+      /* Right Side - Complaint Form */
+      .footer-right {
         flex: 1;
-        min-width: 250px;
+        min-width: 280px;
       }
 
-      .contact-form {
-        flex: 1;
-        min-width: 250px;
-      }
-
-      input,
-      textarea {
-        width: 100%;
+      .footer-right h3 {
+        color: #00ff88;
+        font-weight: 700;
         margin-bottom: 15px;
-        padding: 10px;
-        border-radius: 8px;
-        border: none;
       }
 
-      footer {
-        background: var(--secondary);
+      .complaint-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .complaint-form input,
+      .complaint-form textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid rgba(0, 255, 136, 0.3);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #e2e8f0;
+        font-size: 14px;
+        outline: none;
+        transition: border 0.3s;
+      }
+
+      .complaint-form input:focus,
+      .complaint-form textarea:focus {
+        border: 1px solid #00ff88;
+        box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+      }
+
+      .complaint-form textarea {
+        height: 100px;
+        resize: none;
+      }
+
+      .complaint-form button {
+        background: #00ff88;
+        color: #000;
+        font-weight: 600;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .complaint-form button:hover {
+        background: #00d176;
+        transform: scale(1.05);
+      }
+
+      /* Copyright */
+      .copy {
         text-align: center;
-        padding: 20px;
-        margin-top: 60px;
-        color: var(--light);
+        font-size: 13px;
+        color: #94a3b8;
+        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 15px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+        }
+
+        .footer-left,
+        .footer-right {
+          width: 100%;
+        }
+
+        .social-icons {
+          justify-content: center;
+        }
       }
     </style>
   </head>
@@ -327,12 +567,12 @@
     <section id="about" class="about">
       <h2>About Section</h2>
       <p>
-        FCI Hostel is a modern and comfortable residence designed to provide
+        SAF Hostel is a modern and comfortable residence designed to provide
         students with a safe, clean, and peaceful environment. We ensure quality
         meals, hygienic surroundings, and uninterrupted internet access to make
         hostel life enjoyable and productive. Our mission is to create a
         home-like atmosphere where every student can grow academically,
-        socially, and personally. At FCI Hostel, we don’t just offer a place to
+        socially, and personally. At SAF Hostel, we don’t just offer a place to
         stay — we build a community of learners and dreamers. 🌟
       </p>
     </section>
@@ -343,7 +583,7 @@
         <img src="manager.jpg" alt="Manager" />
         <div class="text">
           <p>
-            “Dear Students, Welcome to FCI Hostel — a place not just to stay,
+            “Dear Students, Welcome to SAF Hostel — a place not just to stay,
             but to grow, learn, and belong. Our goal is to provide a safe,
             clean, and supportive environment where you can focus on your
             studies and personal development. We believe that every student
@@ -369,6 +609,70 @@
           <h3>Details</h3>
           <p>এখানে নির্বাচিত নোটিশের বিস্তারিত বিবরণ প্রদর্শিত হবে।</p>
         </div>
+      </div>
+    </section>
+    <!-- Meal Management Section -->
+    <section class="meal-section" id="meal-management">
+      <h2>🍽️ Meal Management</h2>
+      <p class="meal-intro">
+        সপ্তাহের প্রতিদিনের খাবারের তালিকা নিচে দেওয়া হলো।
+      </p>
+
+      <div class="meal-table-container">
+        <table class="meal-table">
+          <thead>
+            <tr>
+              <th>দিন</th>
+              <th>সকাল</th>
+              <th>দুপুর</th>
+              <th>রাত</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>সোমবার</td>
+              <td>খিচুড়ি, ডিম ভাজি, চা</td>
+              <td>ভাত, ডাল, মুরগি</td>
+              <td>রুটি, সবজি, দই</td>
+            </tr>
+            <tr>
+              <td>মঙ্গলবার</td>
+              <td>ভাত, ডিম, দুধ</td>
+              <td>ভাত, মাছ, ডাল</td>
+              <td>খিচুড়ি, ডিম, স্যালাড</td>
+            </tr>
+            <tr>
+              <td>বুধবার</td>
+              <td>খিচুড়ি, আলু ভাজি, চা</td>
+              <td>ভাত, ডাল, সবজি</td>
+              <td>ভাত, ডিম, সূপ</td>
+            </tr>
+            <tr>
+              <td>বৃহস্পতিবার</td>
+              <td>ভাত, সবজি, ডিম</td>
+              <td>ভাত, মাছ, ডাল</td>
+              <td>রুটি, সবজি, দই</td>
+            </tr>
+            <tr>
+              <td>শুক্রবার</td>
+              <td>খিচুড়ি, ডিম, চা</td>
+              <td>পোলাও, মুরগি, সালাদ</td>
+              <td>ভাত, ডাল, ডিম</td>
+            </tr>
+            <tr>
+              <td>শনিবার</td>
+              <td>ভাত, আলু ভাজি, চা</td>
+              <td>ভাত, ডাল, মাছ</td>
+              <td>খিচুড়ি, সবজি</td>
+            </tr>
+            <tr>
+              <td>রবিবার</td>
+              <td>রুটি, ডিম, চা</td>
+              <td>ভাত, মুরগি, সবজি</td>
+              <td>ভাত, ডাল, দই</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -414,23 +718,79 @@
       </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact & Complain</h2>
-      <div class="contact">
-        <div class="contact-info">
-          <p>📍 Feni Computer Institute Hostel</p>
-          <p>📞 Hotline: 01234-567890</p>
-          <p>✉️ Email: info@fcihostel.com</p>
+    <!-- ======= Footer Section ======= -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Side -->
+        <div class="footer-left">
+          <h3>Saheed Abrar Fahad Hostel</h3>
+
+          <div class="contact-info">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Saheed Abrar Fahad Hostel
+            </p>
+            <p><i class="fas fa-phone-alt"></i> +880 1711-000000</p>
+            <p><i class="fas fa-envelope"></i> saheedabrarhostel@gmail.com</p>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="social-icons">
+            <a href="https://www.facebook.com/official.fci.gov.bd" target="_blank" title="Facebook">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                alt="Facebook"
+              />
+            </a>
+            <a href="https://instagram.com/" target="_blank" title="Instagram">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                alt="Instagram"
+              />
+            </a>
+            <a href="https://youtube.com/" target="_blank" title="YouTube">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+                alt="YouTube"
+              />
+            </a>
+            <a href="https://linkedin.com/" target="_blank" title="LinkedIn">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                alt="LinkedIn"
+              />
+            </a>
+            <a
+              href="https://www.google.com/"
+              target="_blank"
+              title="Official Website"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/841/841364.png"
+                alt="Website"
+              />
+            </a>
+          </div>
         </div>
-        <div class="contact-form">
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Your Email" />
-          <textarea rows="4" placeholder="Your Message"></textarea>
-          <button class="btn">Submit</button>
+
+        <!-- Right Side -->
+        <div class="footer-right">
+          <h3>Complaint Form</h3>
+          <form class="complaint-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Write your complaint..." required></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
-    </section>
 
-    <footer>© 2025 SAF Hostel | All Rights Reserved</footer>
+      <p class="copy">© 2025 Saheed Abrar Fahad Hostel. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Font Awesome for contact icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
